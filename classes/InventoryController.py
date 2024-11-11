@@ -15,7 +15,7 @@ class InventoryController():
 		for i in products:
 			productsList.append(vars(i))
 
-		# print(productsList)
+		print(productsList)
 
 		self.__inventoryView.outputProducts(productsList)
 

@@ -1,7 +1,5 @@
 from classes.Food import *
 from classes.InventoryController import *
-from classes.InventoryModel import *
-from classes.InventoryView import *
 
 
 if __name__ == '__main__':
@@ -10,6 +8,5 @@ if __name__ == '__main__':
 	inventoryController = InventoryController()
 	inventoryController.addProduct(product1)
 	inventoryController.addProduct(food1)
-
 	inventoryController.outputProducts()
 	

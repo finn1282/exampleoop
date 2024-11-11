@@ -5,6 +5,7 @@ class Product:
 		self.__price = price
 		self.__supplier = supplier
 		self.__amount = amount
+		self.__sales = 10
 
 	def nameGetter(self):
 		return self.__name
