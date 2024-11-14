@@ -1,23 +1,53 @@
+import json
+from classes.Edibles import *
+from classes.Accessories import *
 from .InventoryModel import *
 from .InventoryView import *
 
 class InventoryController():
-	
+
 	def __init__(self):
-		self.__inventoryModel = InventoryModel()
-		self.__inventoryView = InventoryView()
+		self.inventoryModel = InventoryModel()
+		self.inventoryView = InventoryView()
 
-	def outputProducts(self):
+	def addProduct(self, productType, name, supplier, price, amount, sales, opt1, opt2):
+		if(productType == "Edibles"):
+			product = Edibles(name, supplier, price, amount, sales, opt1, opt2)
+		elif(productType == "Accessories"):
+			product = Accessories(name, supplier, price, amount, sales, opt1, opt2)
+		else:
+			return -1
+		self.inventoryModel.addProduct(product)
 
-		products = self.__inventoryModel.productsGetter()
-		productsList = []
+	def removeProduct(self, productName):
+		self.inventoryModel.removeProduct(productName)
 
-		for i in products:
-			productsList.append(vars(i))
+	def findBy(self, attribute, attributeValue):
+		return self.inventoryModel.findBy(attribute, attributeValue)
 
-		print(productsList)
+	def sortBy(self, attribute, order="ASC"):
+		return self.inventoryModel.sortBy(attribute, order)
 
-		self.__inventoryView.outputProducts(productsList)
+	def inputFromFile(self, file="data.txt"):
+		with open(file, "r") as dataIn:
+			data = dataIn.read()
+		data = json.loads(data)
+		for i in data:
+			if(i['productType'] == "Edibles"):
+				i['opt1'] = i.pop('expiry')
+				i['opt2'] = i.pop('petType')
+			else:
+				i['opt1'] = i.pop('isChewable')
+				i['opt2'] = i.pop('color')
+			self.addProduct(**i)
 
-	def addProduct(self, product):
-		self.__inventoryModel.addProduct(product)
+	def outputToFile(self, file="data.txt", inventory=None):
+		if(inventory==None):
+			inventory=self.inventoryModel.productsStack
+		with open(file, "w") as out:
+			json.dump(self.inventoryModel.productsStack, out)
+
+	def outputInventory(self, inventory=None):
+		if(inventory==None):
+			inventory=self.inventoryModel.productsStack
+		self.inventoryView.outputInventory(inventory)
