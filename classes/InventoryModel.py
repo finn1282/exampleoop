@@ -19,6 +19,15 @@ class InventoryModel:
 		product = product[0]
 		product['sales']+=amount
 
+	def findLowStock(self):
+		lowStock = []
+		for i in self.productsStack:
+			amount = i['amount']
+			minAmount = i['minAmount']
+			if amount<minAmount:
+				lowStock.append(i)
+		return lowStock
+
 	def findBy(self, attribute, attributeValue):
 		search = []
 		for i in self.productsStack:
@@ -49,3 +58,11 @@ class InventoryModel:
 					j-=1
 				sortedStack[j+1] = key
 			return sortedStack
+		
+	def addStock(self, productName, amount):
+		product = self.findBy("name", productName)	
+		product['amount'] += amount
+
+	def removeStock(self, productName, amount):
+		product = self.findBy("name", productName)	
+		product['amount'] -= amount

@@ -10,11 +10,11 @@ class InventoryController():
 		self.inventoryModel = InventoryModel()
 		self.inventoryView = InventoryView()
 
-	def addProduct(self, productType, name, supplier, price, amount, sales, opt1, opt2):
+	def addProduct(self, productType, name, supplier, price, amount, minAmount, sales, opt1, opt2):
 		if(productType == "Edibles"):
-			product = Edibles(name, supplier, price, amount, sales, opt1, opt2)
+			product = Edibles(name, supplier, price, amount, minAmount, sales, opt1, opt2)
 		elif(productType == "Accessories"):
-			product = Accessories(name, supplier, price, amount, sales, opt1, opt2)
+			product = Accessories(name, supplier, price, amount, minAmount, sales, opt1, opt2)
 		else:
 			return -1
 		self.inventoryModel.addProduct(product)
@@ -25,11 +25,21 @@ class InventoryController():
 	def sellProduct(self, productName, amount):
 		self.inventoryModel.sellProduct(productName, amount)
 
+	def findLowStock(self):
+		lowStock = self.inventoryModel.findLowStock()
+		self.inventoryView.outputInventory(lowStock)
+
 	def findBy(self, attribute, attributeValue):
 		return self.inventoryModel.findBy(attribute, attributeValue)
 
 	def sortBy(self, attribute, order="ASC"):
 		return self.inventoryModel.sortBy(attribute, order)
+	
+	def addStock(self, productName, amount):
+		self.inventoryModel.addStock(productName, amount)
+	
+	def removeStock(self, productName, amount):
+		self.inventoryModel.removeStock(productName, amount)
 
 	def inputFromFile(self, file="data.txt"):
 		with open(file, "r") as dataIn:
