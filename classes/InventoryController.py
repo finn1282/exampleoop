@@ -22,6 +22,9 @@ class InventoryController():
 	def removeProduct(self, productName):
 		self.inventoryModel.removeProduct(productName)
 
+	def sellProduct(self, productName, amount):
+		self.inventoryModel.sellProduct(productName, amount)
+
 	def findBy(self, attribute, attributeValue):
 		return self.inventoryModel.findBy(attribute, attributeValue)
 

@@ -14,6 +14,11 @@ class InventoryModel:
 			if i['name'] == productName:
 				self.productsStack.remove(i)
 
+	def sellProduct(self, productName, amount):
+		product = self.findBy("name", productName)
+		product = product[0]
+		product['sales']+=amount
+
 	def findBy(self, attribute, attributeValue):
 		search = []
 		for i in self.productsStack:
