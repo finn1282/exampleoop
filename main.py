@@ -7,3 +7,5 @@ if __name__ == '__main__':
 	inventory.inputFromFile()
 	inventory.outputInventory(inventory.sortBy('price', 'DESC'))
 	inventory.outputInventory(inventory.findBy('supplier', 'mewmew'))
+
+	print("test")
