@@ -1,8 +1,17 @@
 from .Edibles import *
 from .Accessories import *
+from tabulate import tabulate
 
 class Inventory:
 
+	def findBy(self, attribute, attributeValue):
+		productsList = self.convertToList(self.productsDict)
+		outputList = []
+		for i in productsList: 
+			if(i[attribute]==attributeValue):
+				outputList.append(i)
+		return outputList
+				
 	def sortBy(self, attribute, order='ASC'):
 		sortedStack = self.convertToList(self.productsDict)
 		if(order=='ASC'):
@@ -34,7 +43,7 @@ class Inventory:
 		return outputList
 
 	def makeSales(self, name, amount):
-		self.productsDict[name].sellProduct(amount)
+		return self.productsDict[name].sellProduct(amount)
 
 	def decreaseStock(self, name, amount):
 		self.productsDict[name].reduceAmount(amount)
@@ -47,11 +56,15 @@ class Inventory:
 
 	def outputProductsList(self, products = None):
 		if products==None:
+			outputList = []
 			for i in self.convertToList(self.productsDict):
-				print(i)
+				outputList.append(list(i.values()))
+			print(tabulate(outputList, headers=["Product Name", "Price (RM)", "Supplier", "Amount", "Minimum Amount", "Sales", "Chewable", "Colour"], floatfmt=".2f"))
 		else:
+			outputList = []
 			for i in products:
-				print(i)
+				outputList.append(list(i.values()))
+			print(tabulate(outputList, headers=["Product Name", "Price (RM)", "Supplier", "Amount", "Minimum Amount", "Sales", "Chewable", "Colour"], floatfmt=".2f"))
 
 	def convertToList(self, dict, user=False):
 		productList=[]
@@ -64,11 +77,11 @@ class Inventory:
 			productList.append(productDict)
 		return productList
 
-	def addProduct(self, productType, name, supplier, amount, minAmount, price, opt1, opt2):
+	def addProduct(self, productType, name, supplier, amount, minAmount, price, sales, opt1, opt2):
 		if productType == "Edibles":
-			product = Edibles(name, supplier, amount, minAmount, price, self.user, opt1, opt2)
+			product = Edibles(name, supplier, amount, minAmount, price, sales, self.user, opt1, opt2)
 		else:
-			product = Accessories(name, supplier, amount, minAmount, price, self.user, opt1, opt2)
+			product = Accessories(name, supplier, amount, minAmount, price, sales, self.user, opt1, opt2)
 		self.productsDict[name] = product
 
 	def outputToFile(self):
@@ -101,7 +114,7 @@ class Inventory:
 				output.write("\n")	
 
 		for product in productList:
-			self.addProduct(product['productType'], product['name'], product['supplier'], product['amount'], product['minAmount'], product['price'], list(product.values())[-2], list(product.values())[-1])
+			self.addProduct(product['productType'], product['name'], product['supplier'], product['amount'], product['minAmount'], product['price'], product['sales'], list(product.values())[-2], list(product.values())[-1])
 
 	def __init__(self, user):
 

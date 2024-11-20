@@ -4,7 +4,7 @@ from .Product import *
 
 class Edibles(Product): #extends Product class
 	
-	def __init__(self, name, supplier, amount, minAmount, price, user, expiryDate, petType):
-		super().__init__(name, supplier, amount, minAmount, price, user)
+	def __init__(self, name, supplier, amount, minAmount, price, sales, user, expiryDate, petType):
+		super().__init__(name, supplier, amount, minAmount, price, sales, user)
 		self.expiryDate = expiryDate
 		self.petType = petType

@@ -1,7 +1,15 @@
-{'productType': 'Edibles', 'name': 'Sock Flavoured Treats', 'supplier': 'SnowyTreats', 'amount': 60, 'minAmount': 50, 'price': 20, 'sales': 0, 'user': 'user1', 'expiryDate': 20241212, 'petType': 'dog'}
-{'productType': 'Accessories', 'name': 'dogtoy', 'supplier': 'mewmew', 'amount': 5, 'minAmount': 20, 'price': 30, 'sales': 0, 'user': 'user1', 'isChewable': False, 'color': 'yellow'}
-{'productType': 'Accessories', 'name': 'cattoy', 'supplier': 'woofwoof', 'amount': 30, 'minAmount': 10, 'price': 40, 'sales': 0, 'user': 'user1', 'isChewable': True, 'color': 'red'}
-{'productType': 'Edibles', 'name': 'Chicken Protein Kibble', 'supplier': 'ToffeeYums', 'amount': 60, 'minAmount': 50, 'price': 20, 'sales': 0, 'user': 'user1', 'expiryDate': 20250613, 'petType': 'dog'}
-{'productType': 'Edibles', 'name': 'Salmon Nutritious Kibble', 'supplier': 'MisuTheChef', 'amount': 40, 'minAmount': 50, 'price': 30, 'sales': 0, 'user': 'user1', 'expiryDate': 20250207, 'petType': 'cat'}
-{'productType': 'Accessories', 'name': 'Seagrass Mat', 'supplier': 'OreoToys', 'amount': 25, 'minAmount': 15, 'price': 8, 'sales': 0, 'user': 'user1', 'isChewable': False, 'color': 'yellow'}
-{'productType': 'Edibles', 'name': 'catfood', 'supplier': 'mewmew', 'amount': 40, 'minAmount': 50, 'price': 20, 'sales': 0, 'user': 'user1', 'expiryDate': 1004, 'petType': 'cat'}
+{'productType': 'Edibles', 'name': 'Sock Flavoured Treats', 'supplier': 'SnowyTreats', 'amount': 60, 'minAmount': 50, 'price': 20.0, 'sales': 20, 'user': 'Snowy', 'expiryDate': 20241212, 'petType': 'Dog'}
+{'productType': 'Accessories', 'name': 'Chewy Bone Toy', 'supplier': 'WeLovePups', 'amount': 15, 'minAmount': 20, 'price': 15.9, 'sales': 27, 'user': 'Snowy', 'isChewable': True, 'color': 'Red'}
+{'productType': 'Accessories', 'name': 'Rechargeable Auto Mouse Toy', 'supplier': 'MeeMeow', 'amount': 30, 'minAmount': 10, 'price': 37.0, 'sales': 10, 'user': 'Snowy', 'isChewable': False, 'color': 'Green'}
+{'productType': 'Accessories', 'name': 'Fluttery Wand Toy', 'supplier': 'Kittoys', 'amount': 5, 'minAmount': 20, 'price': 6.9, 'sales': 52, 'user': 'Snowy', 'isChewable': False, 'color': 'Blue'}
+{'productType': 'Edibles', 'name': 'Chicken Protein Kibble', 'supplier': 'ToffeeYums', 'amount': 60, 'minAmount': 50, 'price': 20.0, 'sales': 36, 'user': 'Snowy', 'expiryDate': 20250613, 'petType': 'Dog'}
+{'productType': 'Edibles', 'name': 'Salmon Nutritious Kibble', 'supplier': 'MisuTheChef', 'amount': 40, 'minAmount': 50, 'price': 35, 'sales': 111, 'user': 'Snowy', 'expiryDate': 20250207, 'petType': 'Cat'}
+{'productType': 'Accessories', 'name': 'Seagrass Mat', 'supplier': 'OreoToys', 'amount': 25, 'minAmount': 15, 'price': 8.0, 'sales': 12, 'user': 'Snowy', 'isChewable': True, 'color': 'Brown'}
+{'productType': 'Edibles', 'name': 'Premium Beef Kibble', 'supplier': 'MisuTheChef', 'amount': 16, 'minAmount': 20, 'price': 50.0, 'sales': 36, 'user': 'Snowy', 'expiryDate': 20260707, 'petType': 'Cat'}
+{'productType': 'Edibles', 'name': 'Eco Alfafa Hay', 'supplier': 'TigerStocks', 'amount': 50, 'minAmount': 20, 'price': 16.0, 'sales': 26, 'user': 'Snowy', 'expiryDate': 20261212, 'petType': 'Cat'}
+{'productType': 'Accessories', 'name': 'Snake Hide', 'supplier': 'ExoReptiles', 'amount': 3, 'minAmount': 10, 'price': 30.0, 'sales': 12, 'user': 'Snowy', 'isChewable': False, 'color': 'Brown'}
+{'productType': 'Edibles', 'name': 'Dried Capelin Fish Toppers', 'supplier': 'PawPets', 'amount': 20, 'minAmount': 10, 'price': 7.0, 'sales': 50, 'user': 'Snowy', 'expiryDate': 20261031, 'petType': 'Cat'}
+{'productType': 'Edibles', 'name': 'Premium Sunflower Seeds', 'supplier': 'Birdy', 'amount': 30, 'minAmount': 10, 'price': 10.0, 'sales': 30, 'user': 'Snowy', 'expiryDate': 20261212, 'petType': 'Bird'}
+{'productType': 'Accessories', 'name': 'Flower Crocheted Collar', 'supplier': 'MeeMeow', 'amount': 28, 'minAmount': 15, 'price': 9.9, 'sales': 42, 'user': 'Snowy', 'isChewable': False, 'color': 'Pink'}
+{'productType': 'Accessories', 'name': 'Cute Pet Clothing', 'supplier': 'PetsWorld', 'amount': 40, 'minAmount': 20, 'price': 15.0, 'sales': 61, 'user': 'Snowy', 'isChewable': False, 'color': 'Multicolour'}
+{'productType': 'Edibles', 'name': 'Pawprint Treats', 'supplier': 'SnowyTreats', 'amount': 100, 'minAmount': 30, 'price': 1.5, 'sales': 77, 'user': 'Snowy', 'expiryDate': 20250604, 'petType': 'Cat/Dog'}

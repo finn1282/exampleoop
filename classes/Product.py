@@ -3,18 +3,19 @@
 
 class Product:
 
-	def __init__(self, name, supplier, amount, minAmount, price, user):
+	def __init__(self, name, supplier, amount, minAmount, price, sales, user):
 		self.name = name
 		self.supplier = supplier
 		self.amount = amount
 		self.minAmount = minAmount
 		self.price = price
-		self.sales = 0
+		self.sales = sales
 		self.user = user
 
 	def sellProduct(self, amount):
 		self.amount -= amount
 		self.sales += amount
+		return self.price*amount
 
 	def increaseAmount(self, amount):
 		self.amount+=amount
