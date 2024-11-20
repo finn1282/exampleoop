@@ -1,0 +1,7 @@
+{'productType': 'Edibles', 'name': 'Sock Flavoured Treats', 'supplier': 'SnowyTreats', 'amount': 60, 'minAmount': 50, 'price': 20, 'sales': 0, 'user': 'user1', 'expiryDate': 20241212, 'petType': 'dog'}
+{'productType': 'Accessories', 'name': 'dogtoy', 'supplier': 'mewmew', 'amount': 5, 'minAmount': 20, 'price': 30, 'sales': 0, 'user': 'user1', 'isChewable': False, 'color': 'yellow'}
+{'productType': 'Accessories', 'name': 'cattoy', 'supplier': 'woofwoof', 'amount': 30, 'minAmount': 10, 'price': 40, 'sales': 0, 'user': 'user1', 'isChewable': True, 'color': 'red'}
+{'productType': 'Edibles', 'name': 'Chicken Protein Kibble', 'supplier': 'ToffeeYums', 'amount': 60, 'minAmount': 50, 'price': 20, 'sales': 0, 'user': 'user1', 'expiryDate': 20250613, 'petType': 'dog'}
+{'productType': 'Edibles', 'name': 'Salmon Nutritious Kibble', 'supplier': 'MisuTheChef', 'amount': 40, 'minAmount': 50, 'price': 30, 'sales': 0, 'user': 'user1', 'expiryDate': 20250207, 'petType': 'cat'}
+{'productType': 'Accessories', 'name': 'Seagrass Mat', 'supplier': 'OreoToys', 'amount': 25, 'minAmount': 15, 'price': 8, 'sales': 0, 'user': 'user1', 'isChewable': False, 'color': 'yellow'}
+{'productType': 'Edibles', 'name': 'catfood', 'supplier': 'mewmew', 'amount': 40, 'minAmount': 50, 'price': 20, 'sales': 0, 'user': 'user1', 'expiryDate': 1004, 'petType': 'cat'}
