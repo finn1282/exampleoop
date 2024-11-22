@@ -1,0 +1,55 @@
+All Accessories:
+Product Name                   Price (RM)  Supplier       Amount    Minimum Amount    Sales  Chewable    Color
+---------------------------  ------------  -----------  --------  ----------------  -------  ----------  -----------
+Chewy Bone Toy                      15.90  WeLovePups         15                20       27  True        Red
+Rechargeable Auto Mouse Toy         37.00  MeeMeow            30                10       10  False       Green
+Fluttery Wand Toy                    6.90  Kittoys             5                20       52  False       Blue
+Seagrass Mat                         8.00  OreoToys           25                15       12  True        Brown
+Snake Hide                          30.00  ExoReptiles         3                10       12  False       Brown
+Flower Crocheted Collar              9.90  MeeMeow            28                15       42  False       Pink
+Cute Pet Clothing                   15.00  PetsWorld          40                20       61  False       Multicolour
+
+All Edibles:
+Product Name                  Price (RM)  Supplier       Amount    Minimum Amount    Sales    Expiry Date  Pet Type
+--------------------------  ------------  -----------  --------  ----------------  -------  -------------  ----------
+Sock Flavoured Treats              20.00  SnowyTreats        60                50       20       20241212  Dog
+Chicken Protein Kibble             20.00  ToffeeYums         60                50       36       20250613  Dog
+Salmon Nutritious Kibble           35.00  MisuTheChef        40                50      111       20250207  Cat
+Premium Beef Kibble                50.00  MisuTheChef        16                20       36       20260707  Cat
+Eco Alfafa Hay                     16.00  TigerStocks        50                20       26       20261212  Cat
+Dried Capelin Fish Toppers          7.00  PawPets            20                10       50       20261031  Cat
+Premium Sunflower Seeds            10.00  Birdy              30                10       30       20261212  Bird
+Pawprint Treats                     1.50  SnowyTreats       100                30       77       20250604  Cat/Dog
+
+
+Accessories Low Stock:
+Product Name         Price (RM)  Supplier       Amount    Minimum Amount    Sales  Chewable    Color
+-----------------  ------------  -----------  --------  ----------------  -------  ----------  -------
+Chewy Bone Toy            15.90  WeLovePups         15                20       27  True        Red
+Fluttery Wand Toy          6.90  Kittoys             5                20       52  False       Blue
+Snake Hide                30.00  ExoReptiles         3                10       12  False       Brown
+
+
+Edibles Low Stock:
+Product Name                Price (RM)  Supplier       Amount    Minimum Amount    Sales    Expiry Date  Pet Type
+------------------------  ------------  -----------  --------  ----------------  -------  -------------  ----------
+Salmon Nutritious Kibble         35.00  MisuTheChef        40                50      111       20250207  Cat
+Premium Beef Kibble              50.00  MisuTheChef        16                20       36       20260707  Cat
+
+
+
+Current Trends
+
+Most Popular Products:
+1. Salmon Nutritious Kibble
+2. Pawprint Treats
+3. Cute Pet Clothing
+4. Fluttery Wand Toy
+5. Dried Capelin Fish Toppers
+
+Least Popular Products:
+1. Rechargeable Auto Mouse Toy
+2. Snake Hide
+3. Seagrass Mat
+4. Sock Flavoured Treats
+5. Eco Alfafa Hay

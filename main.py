@@ -1,4 +1,5 @@
 from classes.Inventory import * 
+from classes.Report import *
 
 def getInput(inputValues, display, type="str"):
     if(type=="str"):
@@ -24,12 +25,26 @@ if __name__=='__main__':
 
     inventory = Inventory(user)
 
+
     while True:
         userAction = getInput(["1", "2", "3", "4", "5", "6"], "Please enter your option: (1) See Inventory, (2) Update Inventory, (3) Make Sales, (4) See Low Stock, (5) Produce Report, (6) Exit: ")
         print("")
         if(userAction == "1"):
             inventory.outputProductsList()
             print("")
+            outputOptions = getInput(["1", "2", "3"], "Please enter your option: (1) Sort Inventory, (2) Find By Attribute, (3) Return: ")
+            if(outputOptions=="1"):
+                attribute = getInput(["price", "amount", "sales"], "Please input attribute to sort by (price/amount/sales): ")
+                order = getInput(["ASC","DESC"], "Please input order to sort by (ASC/DESC): ")
+                inventory.outputProductsList(inventory.sortBy(attribute, order))
+            elif(outputOptions=="2"):
+                attribute = getInput(["name", "supplier", "petType"], "Please input attribute to find (name/supplier/pettype): ")
+                value = input("Please input value to find: ")
+                foundList = inventory.findBy(attribute, value)
+                if(len(foundList)<1):
+                    print("The item you are looking for does not exist.")
+                else:
+                    inventory.outputProductsList(foundList)
         elif(userAction=="2"):
             continueAction=True
             while continueAction==True:
@@ -112,7 +127,12 @@ if __name__=='__main__':
             inventory.outputProductsList(lowStock)
         
         elif(userAction=="5"):
-            print("Report")
+            lowStockList = inventory.lowStock()
+            sortedList = inventory.sortBy('sales', 'DESC')
+            report = Report(inventory.convertToList(inventory.productsDict), lowStockList, sortedList)
+            report.produceReport()
+            report.outputReport()
+            report.outputToFile()
 
         elif(userAction=="6"):
             print("Thank you for using the system.")
