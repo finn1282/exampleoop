@@ -154,8 +154,6 @@ class Report:
         x = np.arange(5)
         ya = np.array(self.sales)
 
-        print(x)
-        print(ya)
         plt.figure(figsize=(10,9))
         plt.bar(x,ya, color='aqua', edgecolor='black', alpha=0.8)
         for i in range(len(self.names)):

@@ -10,16 +10,16 @@ Flower Crocheted Collar              9.90  MeeMeow            28                
 Cute Pet Clothing                   15.00  PetsWorld          40                20       61  False       Multicolour
 
 All Edibles:
-Product Name                  Price (RM)  Supplier       Amount    Minimum Amount    Sales    Expiry Date  Pet Type
---------------------------  ------------  -----------  --------  ----------------  -------  -------------  ----------
-Sock Flavoured Treats              20.00  SnowyTreats        60                50       20       20241212  Dog
-Chicken Protein Kibble             20.00  ToffeeYums         60                50       36       20250613  Dog
-Salmon Nutritious Kibble           35.00  MisuTheChef        40                50      111       20250207  Cat
-Premium Beef Kibble                50.00  MisuTheChef        16                20       36       20260707  Cat
-Eco Alfafa Hay                     16.00  TigerStocks        50                20       26       20261212  Cat
-Dried Capelin Fish Toppers          7.00  PawPets            20                10       50       20261031  Cat
-Premium Sunflower Seeds            10.00  Birdy              30                10       30       20261212  Bird
-Pawprint Treats                     1.50  SnowyTreats       100                30       77       20250604  Cat/Dog
+Product Name                  Price (RM)  Supplier                 Amount    Minimum Amount        Sales    Expiry Date  Pet Type
+--------------------------  ------------  -----------  ------------------  ----------------  -----------  -------------  ----------
+Sock Flavoured Treats              20.00  SnowyTreats                  60                50           20       20241212  Dog
+Chicken Protein Kibble             20.00  ToffeeYums                   60                50           36       20250613  Dog
+Salmon Nutritious Kibble           35.00  MisuTheChef                  40                50          111       20250207  Cat
+Premium Beef Kibble                50.00  MisuTheChef                  16                20           36       20260707  Cat
+Eco Alfafa Hay                     16.00  TigerStocks                  50                20           26       20261212  Cat
+Dried Capelin Fish Toppers          7.00  PawPets                      20                10           50       20261031  Cat
+Premium Sunflower Seeds            10.00  Birdy                        30                10           30       20261212  Bird
+Pawprint Treats                     1.50  SnowyTreats  999999990000000000                30  10000000177       20250604  Cat/Dog
 
 
 Accessories Low Stock:
@@ -41,8 +41,8 @@ Premium Beef Kibble              50.00  MisuTheChef        16                20 
 Current Trends
 
 Most Popular Products:
-1. Salmon Nutritious Kibble
-2. Pawprint Treats
+1. Pawprint Treats
+2. Salmon Nutritious Kibble
 3. Cute Pet Clothing
 4. Fluttery Wand Toy
 5. Dried Capelin Fish Toppers

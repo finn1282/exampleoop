@@ -21,7 +21,7 @@ class Inventory:
 				pass
 			j = eval(j.replace("\n", ""))
 			database[i] = j
-			if(database[i]['user'] == user):
+			if(database[i]['user'].lower() == user.lower()):
 				productList.append(j)
 			else: 
 				returnList.append(j)
@@ -85,7 +85,7 @@ class Inventory:
 		for i in productsList:
 			if attribute=='petType' and i['productType']=="Accessories":
 				continue
-			if(i[attribute]==attributeValue.lower()):
+			if(i[attribute].lower()==attributeValue.lower()):
 				outputList.append(i)
 		return outputList
 				

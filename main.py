@@ -74,10 +74,11 @@ if __name__=='__main__':
                 elif(updateOptions=="2"):
                     while True:
                         name = input("Please input product name: ")
-                        if(len(inventory.findBy("name", name))>0):
+                        find = inventory.findBy("name", name)
+                        if(len(find)>0):
                             break
                         print("Please enter a valid product.")
-                    inventory.removeProduct(name)
+                    inventory.removeProduct(find[0]['name'])
                     print("")
                     print(f"Product {name} successfully removed.")
                     continueInput = getInput(["yes", "no"], "Continue with another action? (yes/no): ")
@@ -86,11 +87,12 @@ if __name__=='__main__':
                 elif(updateOptions=="3"):
                     while True:
                         name = input("Please input product name: ")
-                        if(len(inventory.findBy("name", name))>0):
+                        find = inventory.findBy("name", name)
+                        if(len(find)>0):
                             break
                         print("Please enter a valid product.")
                     amount = getInput([], "Please enter amount to increase: ", "int")
-                    inventory.increaseStock(name, amount)
+                    inventory.increaseStock(find[0]['name'], amount)
                     print("")
                     print(f"Product {name} successfully increased by {amount}.")
                     continueInput = getInput(["yes", "no"], "Continue with another action? (yes/no): ")
@@ -115,12 +117,20 @@ if __name__=='__main__':
         elif(userAction=="3"):
             while True:
                 name = input("Please input product name: ")
-                if(len(inventory.findBy("name", name))>0):
+                find = inventory.findBy("name", name)
+                if name=="":
+                    break
+                if(len(find)>0):
+                    while True:
+                        amount = getInput([], "Please enter amount to be sold: ", "int")
+                        if(amount>find[0]['amount']):
+                            print("Sales amount exceeded stock, please enter amount again.")
+                            continue
+                        salesAmount = inventory.makeSales(find[0]['name'], amount)
+                        print(f"The total sales amount is RM{salesAmount:.2f}")
+                        break
                     break
                 print("Please enter a valid product.")
-            amount = getInput([], "Please enter amount to increase: ", "int")
-            salesAmount = inventory.makeSales(name, amount)
-            print(f"The total sales amount is RM{salesAmount:.2f}")
 
         elif(userAction=="4"):
             lowStock = inventory.lowStock()
@@ -129,7 +139,6 @@ if __name__=='__main__':
         elif(userAction=="5"):
             lowStockList = inventory.lowStock()
             sortedList = inventory.sortBy('sales', 'DESC')
-            print(sortedList)
             report = Report(inventory.convertToList(inventory.productsDict), lowStockList, sortedList)
             report.produceReport()
             report.outputReport()
