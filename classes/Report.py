@@ -2,6 +2,7 @@
 from tabulate import tabulate
 import matplotlib.pyplot as plt
 import numpy as np
+import textwrap
 
 class Report:
 
@@ -9,10 +10,11 @@ class Report:
         self.reportContent = []
         self.accessoriesReports = []
         self.ediblesReports = []
-        self.sorted_list = []
-        self.reversesorted_list = []
         self.accessoriesLowStock = []
         self.ediblesLowStock = []
+        self.sales = []
+        self.names = []
+        self.reversedNames = []
         self.productList = productList
         self.lowStockList = lowStockList
         self.sortedList = sortedList
@@ -73,6 +75,17 @@ class Report:
                 e_list = [e_name, e_price, e_supplier, e_amount, e_minAmount, e_sales, e_expiryDate, e_petType]
                 self.ediblesLowStock.append(e_list)
 
+
+        for item in self.sortedList[0:5]:
+            name = item["name"]
+            self.names.append(name)
+            sale = item["sales"]
+            self.sales.append(sale)
+        for item in self.sortedList[:-6:-1]:
+            name = item["name"]
+            self.reversedNames.append(name)
+
+        
         a_rowReport = tabulate(self.accessoriesReports, headers=["Product Name", "Price (RM)", "Supplier", "Amount", "Minimum Amount", "Sales", "Chewable", "Color"], floatfmt=".2f")
         e_rowReport = tabulate(self.ediblesReports, headers=["Product Name", "Price (RM)", "Supplier", "Amount", "Minimum Amount", "Sales", "Expiry Date", "Pet Type"], floatfmt=".2f")
         a_lowStock = tabulate(self.accessoriesLowStock, headers=["Product Name", "Price (RM)", "Supplier", "Amount", "Minimum Amount", "Sales", "Chewable", "Color"], floatfmt=".2f")
@@ -110,75 +123,51 @@ class Report:
             if i == "\n":
                 continue
             print(i)
-        
         number = 1
-        for i in self.sortedList[:5]:
-            numbering = str(number) + ". "
-            ranks = numbering + str(i['name'])
-            self.sorted_list.append(ranks)
+        for i in self.names:
+            print(str(number) + ". " + str(i))
             number += 1
-        
         number = 1
-        for i in self.sortedList[:-6:-1]:
-            numbering = str(number) + ". "
-            ranks = numbering + str(i['name'])
-            self.reversesorted_list.append(ranks)
-            number += 1
-        
-        for i in self.sorted_list:
-            print(i)
-        
         print("\nLeast Popular Products:")
-        for i in self.reversesorted_list:
-            print(i)
+        for i in self.reversedNames:
+            print(str(number) + ". " + str(i))
+            number += 1
 
     def outputToFile(self):
         with open("report.txt", "w") as file:
             file.writelines(self.reportContent)
-            for i in self.sorted_list:
-                file.writelines(i)
-                file.write("\n")
+            number = 1 
+            for i in self.names:
+                    file.writelines(str(number) + ". " + str(i))
+                    file.write("\n")
+                    number += 1
             file.write("\nLeast Popular Products:")
             file.write("\n")
-            for i in self.reversesorted_list:
-                file.writelines(i)
+            number = 1 
+            for i in self.reversedNames:
+                file.writelines(str(number) + ". " + str(i))
                 file.write("\n")
+                number += 1
 
+        # # Code for creating barchart
+        
+        x = np.arange(5)
+        ya = np.array(self.sales)
 
-        a_points = []
-        e_points = []
+        print(x)
+        print(ya)
+        plt.figure(figsize=(10,9))
+        plt.bar(x,ya, color='aqua', edgecolor='black', alpha=0.8)
+        for i in range(len(self.names)):
+            plt.text(i, self.sales[i]+1, self.sales[i], ha = 'center')
+        plt.title("Popular Products",fontname='Serif',fontsize=20,pad=30)
+        plt.ylabel("Sales",fontname='Serif', fontsize=14)
+        plt.xlabel("Product Name",fontname='Serif',fontsize=14)
 
-        for item in self.productList:
-            typeOfProduct = item["productType"]
-            if typeOfProduct == "Accessories":
-                a_sales = item["sales"]
-                a_points.append(a_sales)
-            elif typeOfProduct == "Edibles":
-                e_sales = item["sales"]
-                e_points.append(e_sales)
+        # Wrap text for multi-line labels
+        wrapped_names = ['\n'.join(textwrap.wrap(name, 10)) for name in self.names]
 
-        xa_points = np.array([0, 10, 20, 30])
-        ya_points = np.array([0, (sum(a_points)/2),(sum(a_points)/1.5),sum(a_points)])
-
-        xe_points = np.array([0, 10, 20, 30])
-        ye_points = np.array([0, (sum(e_points)/3), (sum(e_points)/2.4), sum(e_points)])
-
-        plt.subplot(1, 2, 1)
-        plt.plot(xa_points, ya_points, marker="o")
-        plt.title("Accessories")
-        plt.ylabel("Total Sales of Accessories")
-        plt.xlabel("Days in a month")
-
-        plt.subplot(1, 2, 2)
-        plt.plot(xe_points, ye_points, marker="o")
-        plt.title("Edibles")
-        plt.ylabel("Total Sales of Edibles")
-        plt.xlabel("Days in a month")
-
-        plt.subplots_adjust(
-            left=0.1, bottom=0.1, right=0.9, top=0.9, wspace=0.4, hspace=0.4
-        )
-        plt.suptitle("Sales Performance")
-        plt.savefig("Sales_performance.png")
+        plt.xticks(ticks=np.arange(len(self.names)), labels=wrapped_names,fontname='Serif')
+        plt.grid(axis='y', linestyle='--', alpha=0.7)
+        plt.savefig("Sales_performance.png",dpi=300)
         plt.show()
-

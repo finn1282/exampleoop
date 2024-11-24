@@ -82,8 +82,10 @@ class Inventory:
 	def findBy(self, attribute, attributeValue):
 		productsList = self.convertToList(self.productsDict)
 		outputList = []
-		for i in productsList: 
-			if(i[attribute]==attributeValue):
+		for i in productsList:
+			if attribute=='petType' and i['productType']=="Accessories":
+				continue
+			if(i[attribute]==attributeValue.lower()):
 				outputList.append(i)
 		return outputList
 				
@@ -123,7 +125,7 @@ class Inventory:
 				outputList_e.append(temp_list)
 		if(len(outputList_a)>0):
 			print("Accessories:")
-			print(tabulate(outputList_a, headers=["Product Name", "Supplier", "Amount", "Minimum Amount", "Sales", "Chewable", "Colour"], floatfmt=".2f"))
+			print(tabulate(outputList_a, headers=["Product Name", "Supplier", "Amount", "Minimum Amount", "Price (RM)", "Sales", "Chewable", "Colour"], floatfmt=".2f"))
 		if(len(outputList_e)>0):
 			print("Edibles:")
-			print(tabulate(outputList_e, headers=["Product Name", "Supplier", "Amount", "Minimum Amount", "Sales", "Expiry Date", "Animal"], floatfmt=".2f"))
+			print(tabulate(outputList_e, headers=["Product Name", "Supplier", "Amount", "Minimum Amount", "Price (RM)", "Sales", "Expiry Date", "Animal"], floatfmt=".2f"))

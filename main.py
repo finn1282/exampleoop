@@ -129,6 +129,7 @@ if __name__=='__main__':
         elif(userAction=="5"):
             lowStockList = inventory.lowStock()
             sortedList = inventory.sortBy('sales', 'DESC')
+            print(sortedList)
             report = Report(inventory.convertToList(inventory.productsDict), lowStockList, sortedList)
             report.produceReport()
             report.outputReport()

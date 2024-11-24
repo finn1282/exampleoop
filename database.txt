@@ -1,12 +1,6 @@
 {'productType': 'Edibles', 'name': 'Nutritious Lamb Wet Food', 'supplier': 'ToffeeYums', 'price': 28.0, 'amount': 22, 'minAmount': 15, 'sales': 47, 'user': 'Misu', 'expiryDate': 20250430, 'petType': 'Dog'}
 {'productType': 'Edibles', 'name': 'Avian Science Super', 'supplier': 'Lovebirds&Co', 'price': 15.0, 'amount': 13, 'minAmount': 10, 'sales': 8, 'user': 'Misu', 'expiryDate': 20250531, 'petType': 'Bird'}
 {'productType': 'Accessories', 'name': 'Cat Ball with Bell', 'supplier': 'Kittoys', 'price': 2.0, 'amount': 18, 'minAmount': 10, 'sales': 13, 'user': 'Misu', 'isChewable': False, 'colour': 'Multicolour'}
-{'productType': 'Edibles', 'name': 'Nutritious Lamb Wet Food', 'supplier': 'ToffeeYums', 'price': 28.0, 'amount': 22, 'minAmount': 15, 'sales': 47, 'user': 'Misu', 'expiryDate': 20250430, 'petType': 'Dog'}
-{'productType': 'Edibles', 'name': 'Avian Science Super', 'supplier': 'Lovebirds&Co', 'price': 15.0, 'amount': 13, 'minAmount': 10, 'sales': 8, 'user': 'Misu', 'expiryDate': 20250531, 'petType': 'Bird'}
-{'productType': 'Accessories', 'name': 'Cat Ball with Bell', 'supplier': 'Kittoys', 'price': 2.0, 'amount': 18, 'minAmount': 10, 'sales': 13, 'user': 'Misu', 'isChewable': False, 'colour': 'Multicolour'}
-{'productType': 'Edibles', 'name': 'Nutritious Lamb Wet Food', 'supplier': 'ToffeeYums', 'price': 28.0, 'amount': 22, 'minAmount': 15, 'sales': 47, 'user': 'Misu', 'expiryDate': 20250430, 'petType': 'Dog'}
-{'productType': 'Edibles', 'name': 'Avian Science Super', 'supplier': 'Lovebirds&Co', 'price': 15.0, 'amount': 13, 'minAmount': 10, 'sales': 8, 'user': 'Misu', 'expiryDate': 20250531, 'petType': 'Bird'}
-{'productType': 'Accessories', 'name': 'Cat Ball with Bell', 'supplier': 'Kittoys', 'price': 2.0, 'amount': 18, 'minAmount': 10, 'sales': 13, 'user': 'Misu', 'isChewable': False, 'colour': 'Multicolour'}
 {'productType': 'Edibles', 'name': 'Sock Flavoured Treats', 'supplier': 'SnowyTreats', 'amount': 60, 'minAmount': 50, 'price': 20.0, 'sales': 20, 'user': 'Snowy', 'expiryDate': 20241212, 'petType': 'Dog'}
 {'productType': 'Accessories', 'name': 'Chewy Bone Toy', 'supplier': 'WeLovePups', 'amount': 15, 'minAmount': 20, 'price': 15.9, 'sales': 27, 'user': 'Snowy', 'isChewable': True, 'color': 'Red'}
 {'productType': 'Accessories', 'name': 'Rechargeable Auto Mouse Toy', 'supplier': 'MeeMeow', 'amount': 30, 'minAmount': 10, 'price': 37.0, 'sales': 10, 'user': 'Snowy', 'isChewable': False, 'color': 'Green'}
