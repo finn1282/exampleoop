@@ -4,18 +4,24 @@ from tabulate import tabulate
 
 class Inventory:
 
+	#initialize inventory object
 	def __init__(self, user):
 		self.user = user
+		#create empty dictionary
 		self.productsDict = dict()
+		#loads user data from file
 		self.inputFromFile(user)
 	
+	#reads user data from file and saves to dictionary
 	def inputFromFile(self, user):
 		productList = []
 		returnList = []
 
+		#reads all lines in database
 		with open("database.txt", "r") as database:
 			database = database.readlines()
 		
+		#checks if user is current user then saves to productList, if not then saves to returnList
 		for i, j in enumerate(database):
 			if j == "":
 				pass
@@ -26,21 +32,27 @@ class Inventory:
 			else: 
 				returnList.append(j)
 
+		#writes returnList back to database file
 		with open("database.txt", "w") as output:
 			for i in returnList:
 				output.write(str(i))
 				output.write("\n")	
 
+		#from productList creates product objects and saves into product dictionary
 		for product in productList:
 			self.addProduct(product['productType'], product['name'], product['supplier'], product['amount'], product['minAmount'], product['price'], product['sales'], list(product.values())[-2], list(product.values())[-1])
 
+	#outputs current product dictionary to file
 	def outputToFile(self):
+		#converts product objects into json
 		productsList = self.convertToList(self.productsDict, True)
+		#writes each object data out to database file
 		with open("database.txt", "a") as output:
 			for prod in productsList:
 				output.write(str(prod))
 				output.write("\n")
 
+	#converts object dictionary into list of json data
 	def convertToList(self, dict, user=False):
 		productList=[]
 		for i in list(dict.values()):
@@ -52,6 +64,7 @@ class Inventory:
 			productList.append(productDict)
 		return productList
 	
+	#creates product objects and adds to product dictionary
 	def addProduct(self, productType, name, supplier, amount, minAmount, price, sales, opt1, opt2):
 		if productType == "Edibles":
 			product = Edibles(name, supplier, amount, minAmount, price, sales, self.user, opt1, opt2)
@@ -79,6 +92,7 @@ class Inventory:
 				outputList.append(i)
 		return outputList
 
+	#linear sort to find the value in an attribute that matches input
 	def findBy(self, attribute, attributeValue):
 		productsList = self.convertToList(self.productsDict)
 		outputList = []
@@ -89,8 +103,10 @@ class Inventory:
 				outputList.append(i)
 		return outputList
 				
+	#insertion sort to sort through a specific attribute, can be ascending or descending order
 	def sortBy(self, attribute, order='ASC'):
 		sortedStack = self.convertToList(self.productsDict)
+		#sort by ascending order
 		if(order=='ASC'):
 			for i in range(1, len(sortedStack)):
 				value = sortedStack[i][attribute]
@@ -100,6 +116,7 @@ class Inventory:
 					sortedStack[j+1]=sortedStack[j]
 					j-=1
 				sortedStack[j+1] = key
+		#sort by descending order
 		else:
 			for i in range(1, len(sortedStack)):
 				value = sortedStack[i][attribute]
@@ -111,6 +128,7 @@ class Inventory:
 				sortedStack[j+1] = key
 		return sortedStack
 
+	#displays product list, can take in specific lists
 	def outputProductsList(self, products = None):
 		productsList = self.convertToList(self.productsDict) if products==None else products
 		outputList_a = []
